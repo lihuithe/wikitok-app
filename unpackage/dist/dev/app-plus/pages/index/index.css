@@ -1,0 +1,183 @@
+
+.container {
+		width: 100vw;
+		height: 100vh;
+		background-color: #000;
+		padding-top: constant(safe-area-inset-top);
+		padding-top: env(safe-area-inset-top);
+		padding-bottom: constant(safe-area-inset-bottom);
+		padding-bottom: env(safe-area-inset-bottom);
+}
+.swiper {
+		width: 100%;
+		height: 100%;
+		background-color: #000;
+}
+.wiki-item {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		transform: scale(0.98);
+		transition: transform 0.3s ease;
+		max-width: 100%;
+		margin: 0 auto;
+}
+.wiki-item-active {
+		transform: scale(1);
+}
+.background-image {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		object-fit: cover;
+		background-color: #000;
+		transition: opacity 0.3s ease;
+}
+.content-overlay {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(
+			to bottom,
+			rgba(0,0,0,0.2) 0%,
+			rgba(0,0,0,0.3) 50%,
+			rgba(0,0,0,0.8) 100%
+		);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 4vw;
+		box-sizing: border-box;
+		transition: opacity 0.3s ease;
+}
+.top-bar {
+		position: fixed;
+		left: 0;
+		right: 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 4vw;
+		z-index: 2;
+}
+.wiki-content {
+		margin-top: auto;
+		padding: min(4vw, 1.25rem);
+		position: relative;
+		z-index: 1;
+		background: linear-gradient(
+			to bottom,
+			rgba(0,0,0,0) 0%,
+			rgba(0,0,0,0.7) 30%,
+			rgba(0,0,0,0.8) 100%
+		);
+		border-radius: min(2vw, 0.625rem);
+		max-width: 37.5rem;
+		margin-left: auto;
+		margin-right: auto;
+}
+.wiki-title {
+		display: block;
+		color: #ffffff;
+		font-size: min(max(3.5vw, 0.875rem), 1.5rem);
+		font-weight: bold;
+		margin-bottom: min(3vw, 0.9375rem);
+		text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+		line-height: 1.4;
+}
+.wiki-excerpt {
+		display: block;
+		color: rgba(255,255,255,0.9);
+		font-size: min(max(2.8vw, 0.75rem), 0.9375rem);
+		line-height: 1.6;
+		text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+.loading-overlay {
+		position: absolute;
+		bottom: min(4vw, 1.25rem);
+		left: 50%;
+		transform: translateX(-50%);
+		background: rgba(0,0,0,0.6);
+		padding: min(1.5vw, 0.375rem) min(2.5vw, 0.75rem);
+		border-radius: min(3vw, 0.9375rem);
+		z-index: 2;
+}
+.loading-text {
+		color: #ffffff;
+		font-size: min(2.8vw, 0.8125rem);
+}
+.loading-indicator {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background: rgba(0,0,0,0.8);
+		padding: min(2vw, 0.625rem) min(3vw, 0.9375rem);
+		border-radius: min(4vw, 1.25rem);
+		z-index: 999;
+}
+
+	/* 默认样式 */
+.loading-text {
+		font-size: 0.75rem;
+}
+.wiki-title {
+		font-size: 0.75rem;
+}
+.wiki-excerpt {
+		font-size: 0.625rem;
+}
+.history-btn,.language-selector {
+		background: rgba(0,0,0,0.6);
+		text-align: center;
+		height: 0.9375rem;
+		line-height: 0.9375rem;
+		border-radius: 3.125rem;
+		-webkit-backdrop-filter: blur(10px);
+		        backdrop-filter: blur(10px);
+		padding: 0 0.3125rem;
+		padding-bottom: 0.1875rem;
+}
+.history-text,.language-text {
+		color: #ffffff;
+		font-size: 0.5625rem;
+}
+
+	/* 小屏幕设备样式 */
+@media screen and (max-width: 375px) {
+.loading-text {
+			font-size: 1rem;
+}
+.wiki-title {
+			font-size: 1.4375rem;
+}
+.wiki-excerpt {
+			font-size: 1.125rem;
+}
+.history-btn,.language-selector {
+			background: rgba(0,0,0,0.6);
+			text-align: center;
+			height: 1.875rem;
+			line-height: 1.875rem;
+			border-radius: 3.125rem;
+			-webkit-backdrop-filter: blur(10px);
+			        backdrop-filter: blur(10px);
+			padding: 0.125rem 0.625rem;
+			padding-bottom: 0;
+}
+.history-text,.language-text {
+			color: #ffffff;
+			font-size: 1.0625rem;
+}
+}
+	
+	/* 额外的安全区域处理 */
+@supports (padding-top: env(safe-area-inset-top)) {
+.container {
+			padding-top: env(safe-area-inset-top);
+			padding-bottom: env(safe-area-inset-bottom);
+}
+.top-bar {
+			padding-top: env(safe-area-inset-top);
+}
+}
