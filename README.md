@@ -2,6 +2,10 @@
 
 WikiTok is compatible with Android and iOS versions on multiple platforms（WikiTok多端兼容安卓版ios版）
 
+apk下载地址
+
+https://github.com/lihuithe/wikitok-app/blob/main/unpackage/cache/apk/__UNI__CD46827_20250214034557.apk
+
 inspiration source（灵感来源）
 
 https://github.com/IsaacGemal/wikitok
